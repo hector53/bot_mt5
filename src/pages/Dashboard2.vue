@@ -112,13 +112,7 @@
           </div>
          
         </q-card-section>
-           <vue-highcharts v-if="mostrar"
-          type="stockChart"
-          :options="dataGrafico"
-          :redrawOnUpdate="true"
-          :oneToOneUpdate="false"
-          :animateOnUpdate="true"
-          />
+           <balance-chart :dataGrafico="dataGrafico" v-if="mostrar"></balance-chart>
           </q-card>
        
       </div>
@@ -137,13 +131,10 @@ import { api } from "boot/axios";
 import tableEstadisticas from "src/components/tables/tableEstadisticas.vue";
 import TableEstadisticas2 from "src/components/tables/tableEstadisticas2.vue";
 import TableHistoryTrade from "src/components/tables/tableHistoryTrade.vue";
-import VueHighcharts from "vue3-highcharts";
-import HighCharts from "highcharts";
-import StockCharts from "highcharts/modules/stock";
-StockCharts(HighCharts);
+import BalanceChart from 'src/components/charts/balanceChart.vue';
 
 export default {
-  components: { tableEstadisticas, TableEstadisticas2, TableHistoryTrade,  VueHighcharts },
+  components: { tableEstadisticas, TableEstadisticas2, TableHistoryTrade, BalanceChart },
   data() {
     return {
       dataInicial: {},
@@ -167,29 +158,7 @@ export default {
         .then((response) => {
           console.log("response", response);
           this.dataInicial = response.data;
-          this.dataGrafico = {
-                  rangeSelector: {
-                    selected: 1,
-                  },
-                  chart: {
-                    zoomType: "x",
-                  },
-               
-                  xAxis: {
-                    labels: {
-                      step: 2, // displays every second category
-                    },
-                    
-                  },
-                  series: [
-                    {
-                      color: "#ed423a",
-                      data: response.data["graficoBalance"],
-                      name: "Balance",
-                      type: "line",
-                    },
-                  ],
-                }
+          this.dataGrafico = response.data["graficoBalance"]
           this.rows1 = [
             {
               campo: "Deposit",
