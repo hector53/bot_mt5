@@ -3,7 +3,7 @@ import { Cookies } from 'quasar'
 export function login ({ commit, state }, payload) {
     return new Promise(async (resolve, reject) => {
         try {
-          const { data } = await api.post('jwt-auth/v1/token', payload)
+          const { data } = await api.post('login', payload)
           Cookies.set('authToken', data)
           resolve(data)
         }catch(e){
@@ -30,7 +30,7 @@ export function validate ({ state }) {
   const token = Cookies.get('authToken')
   console.log("token", token.token)
     return api({
-        url: 'jwt-auth/v1/token/validate', 
+        url: 'getSession', 
         method: 'post',
         headers: {
           'Authorization': `Bearer ${token.token}`

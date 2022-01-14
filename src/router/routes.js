@@ -3,12 +3,15 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      {path: '', component: () => import('pages/Dashboard.vue'), 
+      {path: '', component: () => import('pages/Dashboard2.vue'), 
       meta: {
         requiresAuth: true
       }
       },
       {path: '/Swap', component: () => import('pages/Swap.vue')},
+      {path: '/graficos', component: () => import('pages/graficos.vue')},
+      {path: '/home', component: () => import('pages/Dashboard2.vue')},
+      {path: '/History', component: () => import('pages/History.vue')},
       
 
       // Not completed yet

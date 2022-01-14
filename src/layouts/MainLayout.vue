@@ -66,33 +66,24 @@
           </q-item-section>
         </q-item>
 
-         <q-item to="/Deposits" class="qitemSidebar" :class="{'active': $route.path == '/Deposits'}">
+         <q-item to="/Trade" class="qitemSidebar" :class="{'active': $route.path == '/Trade'}">
           <q-item-section avatar>
-            <q-icon name="account_balance_wallet"/>
+            <q-icon name="local_atm"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Deposits</q-item-label>
+            <q-item-label>Trade</q-item-label>
           </q-item-section>
         </q-item>
 
-         <q-item to="/Swap" class="qitemSidebar" :class="{'active': $route.path == '/Swap'}">
+         <q-item to="/History" class="qitemSidebar" :class="{'active': $route.path == '/History'}">
           <q-item-section avatar>
-            <q-icon name="swap_horiz"/>
+            <q-icon name="history"/>
           </q-item-section>
           <q-item-section>
-            <q-item-label>Swap</q-item-label>
+            <q-item-label>History</q-item-label>
           </q-item-section>
         </q-item>
 
-
-         <q-item to="/Activity" class="qitemSidebar" :class="{'active': $route.path == '/Activity'}">
-          <q-item-section avatar>
-            <q-icon name="local_activity"/>
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Activity</q-item-label>
-          </q-item-section>
-        </q-item>
 
 
         
