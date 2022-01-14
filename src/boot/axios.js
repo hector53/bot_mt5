@@ -2,7 +2,9 @@ import { boot } from 'quasar/wrappers'
 import axios from 'axios'
 
 //api real
-const api = axios.create({ baseURL: 'http://127.0.0.1:5500/api/' })
+const api = axios.create({ baseURL: 'http://back-trade.jemyxs2xli-zqy3jz1yy6kg.p.runcloud.link/api/' })
+
+//const api = axios.create({ baseURL: 'http://127.0.0.1:5500/api/' })
 //api local
 //const api = axios.create({ baseURL: 'http://localhost/pruebaswordpress/wp-json/' })
 export default boot(({ app }) => {
