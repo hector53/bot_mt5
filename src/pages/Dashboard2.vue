@@ -121,7 +121,10 @@ import TableHistoryTrade from 'src/components/tables/tableHistoryTrade.vue';
                 console.log("response", response);
                 this.dataInicial = response.data
                 this.rows1 = [
-                                
+                                {
+                                    campo: 'Deposit',
+                                    value: 1000,
+                                },
                                 {
                                     campo: 'Balance',
                                     value: response.data["balance"],
@@ -142,15 +145,15 @@ import TableHistoryTrade from 'src/components/tables/tableHistoryTrade.vue';
                                     campo: 'Swap',
                                     value: response.data["swap"],
                                 },
-                                {
-                                    campo: 'Profit',
-                                    value: response.data["totalProfit"],
-                                },
+                               
                                
                               
                                 ]
                   this.rows2 = [
-                                
+                                 {
+                                    campo: 'Profit',
+                                    value: response.data["totalProfit"],
+                                },
                                 {
                                     campo: 'Trades',
                                     value: response.data["trades"],
@@ -159,10 +162,7 @@ import TableHistoryTrade from 'src/components/tables/tableHistoryTrade.vue';
                                     campo: 'Profitability',
                                     value: ( ( response.data["ganadas"]*100/response.data["trades"] ) / 100 ).toFixed(2),
                                 },
-                                 {
-                                    campo: 'Pips',
-                                    value: response.data["pipsGanados"] - response.data["pipsPerdidos"]
-                                },
+                                
                                 {
                                     campo: 'Longs Won',
                                     value: response.data["longsWons"],
@@ -177,7 +177,10 @@ import TableHistoryTrade from 'src/components/tables/tableHistoryTrade.vue';
                                 },
                                 ]
                     this.rows3 = [
-                                
+                                 {
+                                    campo: 'Pips',
+                                    value: response.data["pipsGanados"] - response.data["pipsPerdidos"]
+                                },
                                 {
                                     campo: 'Best Trade (Pips)',
                                     value: "("+response.data["fechaBestTrade"]+")"+" "+ response.data["bestTradePips"],
