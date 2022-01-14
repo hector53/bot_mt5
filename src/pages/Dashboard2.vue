@@ -91,6 +91,7 @@
 
 <script>
 import { Cookies } from "quasar";
+import { useQuasar, Loading } from "quasar";
 import { api } from "boot/axios";
 import tableEstadisticas from 'src/components/tables/tableEstadisticas.vue';
 import TableEstadisticas2 from 'src/components/tables/tableEstadisticas2.vue';
@@ -187,6 +188,7 @@ import TableHistoryTrade from 'src/components/tables/tableHistoryTrade.vue';
                                 },
                                 
                                 ]
+                                Loading.hide();
                 })
             }
         },
